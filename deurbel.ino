@@ -72,19 +72,22 @@ void loop() {
       // only toggle the LED if the new button state is HIGH
       if (buttonState == HIGH) {
     
-    
-		if(digitalRead(Switch1) == HIGH && digitalRead(Switch2) == HIGH){
-		  myDFPlayer.play(1);
-		}
-		if(digitalRead(Switch1) == LOW && digitalRead(Switch2) == HIGH){
-		  myDFPlayer.play(2);
-		}
-		if(digitalRead(Switch1) == HIGH && digitalRead(Switch2) == LOW){
-		  myDFPlayer.play(3);
-		}
-		if(digitalRead(Switch1) == LOW && digitalRead(Switch2) == LOW){
-		  myDFPlayer.play(4);
-		}
+	// if Switch1 and 2 are HIGH
+	if(digitalRead(Switch1) == HIGH && digitalRead(Switch2) == HIGH){
+	  myDFPlayer.play(1);
+	}
+	// If Switch1 is LOW and Switch2 are HIGH
+	if(digitalRead(Switch1) == LOW && digitalRead(Switch2) == HIGH){
+	  myDFPlayer.play(2);
+	}
+	// If Switch1 are HIGH, and Switch2 is LOW
+	if(digitalRead(Switch1) == HIGH && digitalRead(Switch2) == LOW){
+	  myDFPlayer.play(3);
+	}
+       // If both Switches are LOW
+	if(digitalRead(Switch1) == LOW && digitalRead(Switch2) == LOW){
+	  myDFPlayer.play(4);
+	}
     
       }
     }
